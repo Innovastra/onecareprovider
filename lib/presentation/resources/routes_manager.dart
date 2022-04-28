@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:onecareprovider/presentation/resources/strings_manager.dart';
+import 'package:onecareprovider/presentation/splash/splash.dart';
+
+import '../login/login.dart';
 
 class Routes {
   static const String splashRoute = "/";
@@ -17,10 +20,10 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.splashRoute:
-        // return MaterialPageRoute(builder: (_) => SplashView());
+        return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.loginRoute:
         // initLoginModule();
-        // return MaterialPageRoute(builder: (_) => LoginView());
+        return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.onBoardingRoute:
         // return MaterialPageRoute(builder: (_) => OnBoardingView());
       case Routes.registerRoute:

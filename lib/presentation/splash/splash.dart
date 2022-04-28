@@ -17,10 +17,12 @@ class _SplashViewState extends State<SplashView> {
   // AppPreferences _appPreferences = instance<AppPreferences>();
 
   _startDelay() {
-    _timer = Timer(Duration(seconds: 2), _goNext);
+    _timer = Timer(Duration(seconds: 7), _goNext);
   }
 
   _goNext() async {
+    Navigator.pushReplacementNamed(context, Routes.loginRoute);
+    
     // _appPreferences.isUserLoggedIn().then((isUserLoggedIn) => {
     //       if (isUserLoggedIn)
     //         {
@@ -51,6 +53,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     _startDelay();
+
   }
 
   @override
@@ -62,11 +65,12 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.primary,
+      backgroundColor: ColorManager.white,
       body: Center(
-        child: Image(
-          image: AssetImage(ImageAssets.splashLogo),
-        ),
+      child:Container(
+        alignment: Alignment.center,
+        child: Image.asset(ImageAssets.splash, fit:  BoxFit.cover,)
+      )
       ),
     );
   }
